@@ -56,7 +56,7 @@ function App() {
       <ul>
         {appointments.map((appointment) => (
           <li key={appointment._id}>
-            {appointment.name} ({appointment.email}) - {new Date(appointment.date).toLocaleString()}
+            {appointment.name} ({appointment.email}) - {new Date(appointment.date).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
           </li>
         ))}
       </ul>
