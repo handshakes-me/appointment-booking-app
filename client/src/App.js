@@ -1,4 +1,3 @@
-// client/src/App.js
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -17,7 +16,7 @@ function App() {
 
   const fetchAppointments = async () => {
     try {
-      const res = await axios.get('/appointments');
+      const res = await axios.get('https://appointment-booking-app-server.onrender.com/appointments');
       setAppointments(res.data);
     } catch (err) {
       console.error('Error fetching appointments:', err);
@@ -34,7 +33,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/appointments', formInput);
+      await axios.post('https://appointment-booking-app-server.onrender.com/appointments', formInput);
       setFormInput({ name: '', email: '', date: '' });
       fetchAppointments();
     } catch (err) {
